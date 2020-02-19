@@ -51,5 +51,16 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+    public void dialogList(View v){
+        //R.Array.Lists
+        new AlertDialog.Builder(this).setIcon(R.mipmap.ic_launcher).setTitle("선택하세료").setItems(R.array.lists,new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {  //선택된 항목의 인덱스
+                //array 리소스로 string 배열 만들기
+                String[] andriodList= getResources().getStringArray(R.array.lists);
+                Toast.makeText(MainActivity.this, andriodList[i], Toast.LENGTH_LONG).show();
+            }
+        }).setCancelable(false).show();
+    }
 
 }
